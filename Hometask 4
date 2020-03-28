@@ -1,0 +1,82 @@
+package com.autodoc;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        for_first_for();
+        for_first_doWhile();
+        for_second();
+        for_third();
+        for_fourth();
+
+    }
+
+
+    public static void for_first_for() {    //Первая задача: решена через for
+        for (int i = 3; i <= 69; i = i + 6) {
+            System.out.print(i + " ");
+        }
+    }
+
+    public static void for_first_doWhile() {     //Первая задача: решена через do while
+        int i = 3;
+        do {
+            System.out.print(i + " ");
+            i = i + 6;
+        } while (i <= 69);
+    }
+
+    public static void for_second() {            //Вторая задача
+        for (int i = 0; i <= 4; i++) {
+            for (int x = i; x > 0; x--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+
+    }
+
+    public static void for_third() {             //Третья задача
+        System.out.println("Enter score:");
+        Scanner scanner = new Scanner(System.in);
+        int score = scanner.nextInt();
+
+
+        if (score <= 24) {
+            System.out.println("F");
+        } else if (score >= 25 && score <= 44) {
+            System.out.println("E");
+        } else if (score >= 45 && score <= 49) {
+            System.out.println("D");
+        } else if (score >= 50 && score <= 59) {
+            System.out.println("C");
+        } else if (score >= 60 && score <= 79) {
+            System.out.println("B");
+        } else if (score >= 80) {
+            System.out.println("A");
+            scanner.close();
+        }
+    }
+
+    public static void for_fourth() {         //Четвертая задача
+        System.out.println("Enter sum:");
+        Scanner scanner = new Scanner(System.in);
+        int sum = scanner.nextInt();
+        switch (sum) {
+            case 200:
+                System.out.println("Winner!");
+                break;
+            case 202:
+                System.out.println("Oh no! Положи шоколадку на место!");
+                break;
+            case 100:
+                System.out.println("Wow! Можешь взять еще шоколадку");
+                break;
+            default:
+                System.out.println("Something going wrong!");
+        }
+    }
+}
