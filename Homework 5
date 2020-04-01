@@ -1,0 +1,150 @@
+package com.autodoc;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        firstMethod();
+        secondMethod();
+        secondTask();
+        thirdTask();
+        fourthTask();
+
+
+    }
+
+    public static void firstMethod() {        //Первая задача через Math.random()
+        int[] array1 = new int[10];
+        int[] array2 = new int[10];
+
+        for (int j = 0; j < 10; j++) {
+            array1[j] = (int) (Math.random() * 11);
+            array2[j] = (int) (Math.random() * 11);
+        }
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+
+        double average1 = 0;
+        double average2 = 0;
+
+        for (int j = 0; j < 10; j++) {
+            average1 += array1[j];
+            average2 += array2[j];
+        }
+        average1 /= 10;
+        average2 /= 10;
+
+        if (average1 > average2) {
+            System.out.println("First array  (" + average1 + ") bigger than " +
+                    "second array (" + average2 + ")");
+        } else if (average1 < average2) {
+            System.out.println("First array (" + average1 + ") less than " +
+                    "second array (" + average2 + ")");
+        } else {
+            System.out.println("Arrays are equal (" + average1 + ")");
+        }
+    }
+
+
+    public static void secondMethod() {                    //Первая задача через ввод случайных чисел
+        int[] array1 = {1, 2, 5, 8, 8, 4, 7, 8, 10, 10};
+        int[] array2 = {1, 2, 5, 8, 8, 4, 7, 8, 10, 10};
+
+
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+
+        double average1 = 0;
+        double average2 = 0;
+
+        for (int j = 0; j < 10; j++) {
+            average1 += array1[j];
+            average2 += array2[j];
+        }
+        average1 /= 10;
+        average2 /= 10;
+
+        if (average1 > average2) {
+            System.out.println("First array  (" + average1 + ") bigger than " +
+                    "second array (" + average2 + ")");
+        } else if (average1 < average2) {
+            System.out.println("First array (" + average1 + ") less than " +
+                    "second array (" + average2 + ")");
+        } else {
+            System.out.println("Arrays are equal (" + average1 + ")");
+        }
+    }
+
+    public static void secondTask() {             //Вторая задача
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Fill the array:");
+        int arr[] = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+
+        System.out.println("The filled array:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void thirdTask() {                 //Третья задача
+        int[] numbers = {12, 1, 5, 7, 13, -1, -5, 0};
+        int max = numbers[0], min = numbers[0];
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (max < numbers[i])
+                max = numbers[i];
+            else if (min > numbers[i])
+                min = numbers[i];
+
+        }
+        System.out.println("Max: " + max);
+        System.out.println("Min:" + min);
+    }
+
+    public static void fourthTask() {                 //Четвертая задача
+        int[] num = new int[10];
+        num[0] = 5;
+        num[1] = 1;
+        num[2] = 5;
+        num[3] = 8;
+        num[4] = 7;
+        num[5] = 9;
+        num[6] = 0;
+        num[7] = 4;
+        num[8] = 6;
+        num[9] = 4;
+        for (int i = 0; i < num.length; i++) {
+            System.out.print(num[i] + " ");
+        }
+        System.out.println();
+
+
+        int n = num.length;
+        int number;
+        for (int i = 0; i < n / 2; i++) {
+
+            number = num[n - i - 1];
+            num[n - i - 1] = num[i];
+            num[i] = number;
+        }
+
+        int i;
+        for (i = 0; i < num.length; i++) {
+            System.out.print(num[i] + " ");
+        }
+
+    }
+}
+
+
+
+
+
+
